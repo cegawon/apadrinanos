@@ -1,0 +1,461 @@
+<?php
+  session_start(); 
+?>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>APADRINANOS</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- alerta sweetalert2 -->
+        <script src="sweetalert2.all.min.js"></script>
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+         <script src="sweetalert2.min.js"></script>
+         <link rel="stylesheet" href="sweetalert2.min.css"> 
+        <style>
+             .nosotros_imagen{
+                margin-left: 20px;
+            }
+             .video2{
+                width: 800px;
+                height: 500px;
+            }
+           
+            @media (max-width: 756px) 
+            {
+                .nosotros{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .nosotros_imagen{
+                    width: 200px;
+                    margin-left: 0px;
+                }
+                .tab-content{
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }       
+                .about{
+                    margin-top: -80px;
+                }    
+                .video2{
+                    width: 300px;
+                    height: 300px;
+                    margin-top: -60px;
+                } 
+            }
+        </style>
+    </head>
+
+    <body>
+    <div id="mostrar_mensaje"></div>
+
+        <!-- alerta de Suscripción -->
+        <?php
+            if (isset($_SESSION['boletin'])) 
+            {  unset($_SESSION['boletin']);
+        ?>
+                <script>
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'success',
+                        title: 'Registro Exitoso',
+                        text: 'Pronto no comunicaremos con usted, Dios te bendiga Grandemente',
+                        showConfirmButton: false,
+                        timer: 5000
+                    })
+                        
+                </script> 
+            <?php
+            }
+            ?>
+
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="top-bar-left">
+                            <div class="text">
+                                <i class="fa fa-phone-alt"></i>
+                                <p>+57 300 833 4903</p>
+                            </div>
+                            <div class="text">
+                                <i class="fa fa-envelope"></i>
+                                <p>apadrinandounbaby@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Apadrinanos</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" style="margin-top: 20px;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.php" class="nav-item nav-link">Inicio</a>
+                        <a href="about.php" class="nav-item nav-link active">Nosotros</a>
+                        <a href="causes.php" class="nav-item nav-link">Causas</a>                       
+                        <a href="contact.php" class="nav-item nav-link">Contáctanos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+        
+        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Nosotros</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Inicio</a>
+                        <a href="">Nosotros</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+
+        <!-- About Start -->
+        <div class="about" style="display: flex; justify-content: center;">
+            <div class="">
+                <div class="row align-items-center  nosotros" >
+                    
+                    <div class="col-auto text-center">
+                        <div class="section-header text-center">
+                            <p>Conozca sobre nosotros</p>
+                            <h2>Organizacion benefica sin animo de lucro</h2>
+                        </div>
+                        <div class="video">
+                                <video controls class="video2">
+                                    <source src="img/video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        <div class="about-tab mt-5">
+                            <ul class="nav nav-pills nav-justified">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#tab-content-1">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#tab-content-2">Misión</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#tab-content-3">Visión</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="tab-content-1" class="container tab-pane active" style="text-align: justify;">
+                                    Somos una organización Cristiana que busca ayudar a la niños y jovenes de Colombia de escasos recursos a mejorar las condiciones de vida en la cual se encuentran, supliendo algunas de sus necesidades básicas, complementadas con actividades culturales, deportivas y ministeriales.
+                                </div>
+                                <div id="tab-content-2" class="container tab-pane fade" style="text-align: justify;">
+                                    Formar a los niños y jóvenes que viven en barrios de escasos recursos con principios y valores cristianos, alejarlos de las diferentes problemáticas sociales de su entorno, así como suplir sus necesidades básicas.
+                                </div>
+                                <div id="tab-content-3" class="container tab-pane fade" style="text-align: justify;">
+                                    Que los niños que crecen en barrios de bajos recursos de Colombia conozcan la palabra de Dios desde temprana edad, que no se involucren en actividades delictivas, se integren de manera adecuada a la sociedad, se destaquen en todo lo que hagan y que sus necesidades básicas sean suplidas.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+        
+        
+        <!-- Facts Start -->
+        <div class="facts" data-parallax="scroll" data-image-src="img/facts.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-home"></i>
+                            <div class="facts-text">
+                                <h3 class="facts-plus" data-toggle="counter-up">6</h3>
+                                <p>Municipios</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-charity"></i>
+                            <div class="facts-text">
+                                <h3 class="facts-plus" data-toggle="counter-up">8</h3>
+                                <p>Voluntarios</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-kindness"></i>
+                            <div class="facts-text">
+                                <h3  data-toggle="counter-up">300</h3>
+                                <p>Beneficiarios</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="facts-item">
+                            <i class="flaticon-donation"></i>
+                            <div class="facts-text">
+                                <h3  data-toggle="counter-up">500</h3>
+                                <p>Meta 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Facts End -->
+
+
+        <!-- Team Start -->
+        <div class="team">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Conozca a nuetro equipo</p>
+                    <h2>Personas increibles al sevicio de la niñez y la juventud</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/pastor.jpeg" alt="Team Image" height="350">
+                            </div>
+                            <div class="team-text">
+                                <h2>EDUIW THOMAS</h2>
+                                <p>Fundador & CEO</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/islena.jpeg" alt="Team Image" height="350">
+                            </div>
+                            <div class="team-text">
+                                <h2>ISLENA PLATA</h2>
+                                <p>Docente</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/angelith.jpeg" alt="Team Image" height="350">
+                            </div>
+                            <div class="team-text">
+                                <h2>ANGELITH MENDAZA</h2>
+                                <p>Lider Espiritual</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/cesar.jpg" alt="Team Image" height="350">
+                            </div>
+                            <div class="team-text">
+                                <h2>CESAR GALINDO</h2>
+                                <p>Lider de Proyecto</p>
+                                <div class="team-social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+        
+        
+        <!-- Testimonial Start -->
+       
+        <!-- Testimonial End -->
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h2>Nuestra Oficina Central</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>Calle 123, Becerril, César</p>
+                            <p><i class="fa fa-phone-alt"></i>+57 300 833 4903</p>
+                            <p><i class="fa fa-envelope"></i>cegawon@hotmail.com</p>
+                            <div class="footer-social">
+                                <a class="btn btn-custom" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Links</h2>
+                            <a href="">Nosotros</a>
+                            <a href="">Contáctanos</a>
+                            <a href="">Causas</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-newsletter">
+                            <h2>Boletín informativo</h2>
+                            <form action="index.php" method="post">
+                                <input class="form-control" id="boletin" placeholder="Correo Eletrónico" required>
+                                <button class="btn btn-custom" type="submit">Enviar</button>                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="#">Cegasoft</a>, Todos los derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Diseñado por <a href="https://htmlcodex.com">Cegasoft</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- Pre Loader -->
+        <div id="loader" class="show">
+            <div class="loader"></div>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/parallax/parallax.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
+<script>
+    ///////////////////////////////////////// BOLETÍN  //////////////////////////////////////  
+    function bo()
+    {           
+
+         var boletin = document.getElementById("boletin").value        
+         location.reload();    
+    
+        if ( boletin == "" ){
+           
+          return false
+          }else {              
+                 
+          var parametros = 
+          {           
+            "boletin" : $("#boletin").val(),
+            "accion":"1"
+          };
+    
+          $.ajax({
+            data: parametros,
+            url: 'boletin.php',
+            type: 'POST',
+            
+            beforesend: function()
+            {
+              $('#mostrar_mensaje').html("Mensaje antes de Enviar");
+            },
+    
+            success: function(mensaje)
+            {
+              $('#mostrar_mensaje').html(mensaje);
+              
+            }
+          });
+          return false;
+        }
+    } 
+</script>
