@@ -119,7 +119,7 @@
                     <?php
                     if (isset($_SESSION['mensaje'])) 
                     {  unset($_SESSION['mensaje']);?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <div class="alert alert-success alert-dismissible fade show d-none" role="alert">
                             <strong>El mensaje fue enviado con éxito.</strong> 
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
@@ -130,18 +130,7 @@
                     <?php
                     if (isset($_SESSION['boletin'])) 
                     {  unset($_SESSION['boletin']);?>
-                    <script>
-                
-                        Swal.fire({
-                           position: 'center-center',
-                           icon: 'success',
-                           title: 'Registro Exitoso',
-                           text: 'Pronto no comunicaremos con usted, Dios te bendiga Grandemente',
-                           showConfirmButton: false,
-                           timer: 5000
-                        })
-                        
-                    </script> 
+                    
                     <?php
                     }
                     ?>
